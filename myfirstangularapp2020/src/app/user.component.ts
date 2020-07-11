@@ -2,7 +2,10 @@ import {Component} from '@angular/core'
 @Component({
     selector:'app-user',
     template:`
-    <p>Hello Sajjad Yuour user component is displayed here</p>
+    <p>Hello {{name}} Your user component is displayed here</p>
     `
 })
-export class UserComponent{}
+export class UserComponent{
+
+    name='Sajjad Ahmed Paracha'
+}
