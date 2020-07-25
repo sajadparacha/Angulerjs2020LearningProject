@@ -1,0 +1,10 @@
+<p>cart works!</p>
+   <p> <input type="text" id="newItem" [(ngModel)]="newItem"/> </p>
+    <input type="button" value="Add Item" (click)="addNewItem(newItem)">
+
+    <p>New Item = {{newItem}}</p>
+<ul>
+    <li *ngFor="let item of items">
+        {{ item }}
+      </li>
+</ul>
