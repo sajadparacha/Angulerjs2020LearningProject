@@ -1,10 +1,16 @@
 <p>cart works!</p>
+<hr>
    <p> <input type="text" id="newItem" [(ngModel)]="newItem"/> </p>
-    <input type="button" value="Add Item" (click)="addNewItem(newItem)">
-
+    <!-- <input type="button" class="btn btn-primary" value="Add Item" (click)="addNewItem(newItem)"> -->
+    <input type="button" class="btn" [ngClass]="{'btn-primary' : newItem!=='','btn-default':newItem==''} " value="Add Item" (click)="addNewItem(newItem)">
+    <p *ngIf="newItem=='' ">Please enter value here</p>
     <p>New Item = {{newItem}}</p>
-<ul>
-    <li *ngFor="let item of items">
+<hr>
+<ul class="list-group">
+    <li *ngFor="let item of items; let i = index"
+    [ngStyle]="{backgroundColor: i%2===0?'yellow':'blue'}"
+    >
+        <hr>
         {{ item }}
       </li>
 </ul>
